@@ -34,5 +34,14 @@
         "duration": "5 days",
         "image": "tour2.jpg",
         "destination": "Goa"
+    },
+    {
+        "id": 102,
+        "name": "Tour Package 2",
+        "description": "Second tour package",
+        "price": 2000,
+        "duration": "5 days",
+        "image": "tour2.jpg",
+        "destination": "Goa"
     }
 ]
