@@ -14,10 +14,10 @@ const packages = [
         "id":2,
         "name": "Tour Package 1",
         "description":"This is the first tour package ",
-        "price":1000,
+        "price":1200,
         "duration":"3 days",
         "image":'tour2.jpg',
-        "destination":'Goa'
+        "destination":'Delhi'
 
 
     },
@@ -25,13 +25,13 @@ const packages = [
         "id":3,
         "name": "Tour Package 1",
         "description":"This is the first tour package ",
-        "price":1000,
+        "price":1500,
         "duration":"3 days",
         "image":'tour3.jpg',
-        "destination":'Goa'
+        "destination":'Jaipur'
 
 
     }
 ]  
 
-module.exports = packages;   
+module.exports = packages;    

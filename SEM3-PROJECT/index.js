@@ -37,8 +37,6 @@ app.post("/packages", (req, res) => {
 
 
 
-
-
 const tourRoutes = require("./route/tourRoutes");
 
 app.use("/api", tourRoutes);
@@ -46,7 +44,7 @@ app.use("/api", tourRoutes);
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000")
-});            
+});             
 
 
 

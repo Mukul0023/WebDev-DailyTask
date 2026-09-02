@@ -25,17 +25,48 @@ const addTour = (newTour) => {
 // delete tour
 const deleteTour = (id) => {
     const tours = getAll();
-    const index = tours.findIndex(tour => tour.id == id);
-    if (index === -1) return null;
-    tours.splice(index, 1);
-    fs.writeFileSync(filepath, JSON.stringify(tours));
-    return true;
+    const updatedTours = tours.filter(tour => tour.id != id);
+    fs.writeFileSync(filepath, JSON.stringify(updatedTours));
+    return updatedTours;
 };
+
+//Update Tour 
+const updateTour = (id, updatedTour) => {
+    const tours = getAll();
+    const index = tours.findIndex((tour) => tour.id === id);
+    if (index !== -1) {
+        tours[index] = { ...tours[index], ...updatedTour };
+        fs.writeFileSync(filepath, JSON.stringify(tours));
+        return tours[index];
+    }
+    return null;
+}; 
+
+
+const searchTour = (destination) => {
+    const tours = getAll();
+    return tours.filter(
+        (tour) => tour.destination.toLowerCase() === destination.toLowerCase()
+    );
+};
+
+const searchbyPrice = (minPrice, maxPrice) => {
+
+    const tours = getAll();
+
+    return tours.filter(
+        (tour) => tour.price >= minPrice && tour.price <= maxPrice
+    );
+}; 
+
+
 
 module.exports = {
     getAll,
     getById,
     addTour,
-    deleteTour
-
-}; 
+    deleteTour,
+    updateTour,
+    searchTour,
+    searchbyPrice
+};   
