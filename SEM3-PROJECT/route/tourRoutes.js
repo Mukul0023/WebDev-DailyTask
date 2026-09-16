@@ -8,7 +8,7 @@ const tourController = require("../controller/tourController");
 // search tour
 router.get("/tours/search", tourController.searchTour);
 
-// search by  price
+
 // search by price
 router.get("/tours/price", tourController.searchbyPrice);
 
